@@ -1,0 +1,143 @@
+html, body, div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+html {
+    background-image: url(pozadina.webp);
+    background-size: 100% auto;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#tacna {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(146, 139, 137);
+    border-radius: 50%;
+    border: 15px dashed darkgrey;
+    position: absolute;
+    top: 118px;
+    left: 177px;
+    
+
+    transform: perspective(60em) rotateX(89.5deg);
+
+    transform-style: preserve-3d;
+    animation: vrtnja 2s linear 0s infinite;
+
+}
+
+@keyframes vrtnja {
+    0% {transform: rotateX(88deg) rotateZ(0deg);}
+    50% {transform: rotateX(83deg) rotateZ(180deg);}
+    100% {transform: rotateX(88deg) rotateZ(360deg);}
+}
+
+#tacna:hover {
+    animation-play-state: paused;
+  }
+
+
+  input {
+	margin-bottom: 30px;
+}
+
+.casa {
+	position: relative;
+	overflow: hidden;
+	margin: 139.5px 375px;
+	width: 50px;
+	height: 150px;
+	border-radius: 70px/15px;
+	background-color: rgba(160, 160, 160, 0.8);
+}
+
+.casa:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 25px;
+    border-radius: 50px/25px;
+	background-color: rgba(160, 160, 160, 0.2);
+	content: '';
+}
+
+.casa:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 50px;
+	height: 25px;
+	border-radius: 50px/25px;
+	background-color: rgba(160, 160, 160, 0.5);
+	content: '';
+}
+
+.runda {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 50px;
+	height: 0;
+	padding-top: 50px;
+	border-radius: 50px/25px;
+	background-color: rgba(214, 211, 26, 0.5);
+	transition: 0.3s linear;
+}
+
+.runda:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 25px;
+	border-radius: 50px/25px;
+	background-color: rgba(151, 139, 28, 0.2);
+	content: '';
+}
+
+.runda:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 50px;
+	height: 25px;
+	border-radius: 50px/25px;
+	background-color: rgba(185, 169, 21, 0.4);
+	content: '';
+}
+
+.runda--0:checked ~ .casa .runda {
+	bottom: -50px;
+}
+
+.runda--30:checked ~ .casa .runda {
+	height: calc(20px * 0.3);
+}
+
+.runda--50:checked ~ .casa .runda {
+	height: calc(75px * 0.5);
+}
+
+.runda--90:checked ~ .casa .runda {
+	height: calc(100px * 0.9);
+}
+
+#polja {
+    box-sizing: border-box;
+    background-color: rgb(253, 239, 161, 0.5) ;
+    width: 310px;
+    height: 30px;    
+}
+
+ 
